@@ -1,115 +1,258 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAMBARUDHARA PATRA - Resume</title>
+    <title>Dambarudhara Patra | Senior Software Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
         }
+        /* Simple animation for sections */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gray-50 text-gray-800">
 
-    <div class="container mx-auto max-w-4xl p-4 sm:p-8 bg-white shadow-lg my-8 rounded-lg">
-        <!-- Header Section -->
-        <header class="text-center border-b pb-6 mb-8">
-            <h1 class="text-4xl sm:text-5xl font-bold text-gray-900">DAMBARUDHARA PATRA</h1>
-            <div class="flex justify-center items-center space-x-6 mt-4 text-gray-600">
-                <a href="mailto:babi.patra1@gmail.com" class="hover:text-blue-600">babi.patra1@gmail.com</a>
-                <span>|</span>
-                <p>7077192413</p>
+    <!-- Header & Navigation -->
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-900">DP.</a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#about" class="text-gray-600 hover:text-blue-600 transition duration-300">About</a>
+                <a href="#experience" class="text-gray-600 hover:text-blue-600 transition duration-300">Experience</a>
+                <a href="#skills" class="text-gray-600 hover:text-blue-600 transition duration-300">Skills</a>
+                <a href="#contact" class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition duration-300 shadow-md">Contact Me</a>
             </div>
-        </header>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+             <a href="#about" class="block py-2 text-gray-600 hover:text-blue-600">About</a>
+             <a href="#experience" class="block py-2 text-gray-600 hover:text-blue-600">Experience</a>
+             <a href="#skills" class="block py-2 text-gray-600 hover:text-blue-600">Skills</a>
+             <a href="#contact" class="block mt-2 bg-blue-600 text-white text-center px-4 py-2 rounded-full hover:bg-blue-700">Contact Me</a>
+        </div>
+    </header>
 
-        <!-- Summary Section -->
-        <section class="mb-8">
-            <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-500 pb-2 mb-4">SUMMARY</h2>
-            <p class="text-lg leading-relaxed">
-                A results-driven, customer-focused, articulate and analytical Senior Software Engineer who can think "out of the box". Strong in design and integration problem-solving skills. Strong written and verbal communications. To constantly work in a challenging environment on cutting edge technologies and to contribute meaningfully towards the organizational and personal growth.
-            </p>
-        </section>
-
-        <!-- Work Experience Section -->
-        <section class="mb-8">
-            <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-500 pb-2 mb-4">WORK EXPERIENCE</h2>
-            <div class="space-y-6">
-                <!-- Job 1 -->
-                <div class="pl-4 border-l-4 border-gray-200">
-                    <h3 class="text-xl font-semibold">Manager IT (Technical Application Analyst), L&T Finance</h3>
-                    <p class="text-md text-gray-600 mb-2">Jan 2023 - Present</p>
-                    <ul class="list-disc list-inside space-y-1 text-lg">
-                        <li>Daily operational support including Batch job monitoring and application health checks.</li>
-                        <li>Resolving the User queries and help them meet up their requirements.</li>
-                        <li>Liaise with other interfacing system Team members to resolve the various issues faced and provide support out of office hours, during weekends and during major release work to development and customer to help them resolve issues faced.</li>
-                        <li>Working In Housing Loan Section, Home Décor, Express Loan Journey of Client L&T finance Services in Financial Domain. Using Salesforce Application and Workbench to Support LTFS App/Web day to day issue.</li>
-                    </ul>
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-white">
+            <div class="container mx-auto px-6 py-20 md:py-32 text-center">
+                <div class="max-w-4xl mx-auto">
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
+                        Hi, I'm Dambarudhara Patra
+                    </h1>
+                    <p class="mt-4 text-lg md:text-xl text-gray-600">
+                        A results-driven and analytical Senior Software Engineer with a passion for solving complex problems and building cutting-edge technology.
+                    </p>
+                    <div class="mt-8 flex justify-center gap-4">
+                        <a href="#contact" class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-blue-700 transition duration-300 shadow-xl">Get In Touch</a>
+                        <a href="#experience" class="bg-gray-200 text-gray-800 px-8 py-3 rounded-full font-semibold text-lg hover:bg-gray-300 transition duration-300">View My Work</a>
+                    </div>
                 </div>
-                <!-- Job 2 -->
-                <div class="pl-4 border-l-4 border-gray-200">
-                    <h3 class="text-xl font-semibold">Technical Application Analyst, Neo-Soft Technologies</h3>
-                    <p class="text-md text-gray-600 mb-2">Aug 2021 - Jan 2023</p>
-                    <ul class="list-disc list-inside space-y-1 text-lg">
-                        <li>Daily operational support including Batch job monitoring and application health checks.</li>
-                        <li>Resolving the User queries and help them meet up their requirements.</li>
-                        <li>Liaise with other interfacing system Team members to resolve the various issues faced and provide support out of office hours, during weekends and during major release work to development and customer to help them resolve issues faced.</li>
-                        <li>Working In Housing Loan Section, Home Décor, Express Loan Journey of Client L&T finance Services in Financial Domain. Using Salesforce Application and Workbench to Support LTFS App/Web day to day issue.</li>
-                    </ul>
-                </div>
-                <!-- Job 3 -->
-                <div class="pl-4 border-l-4 border-gray-200">
-                    <h3 class="text-xl font-semibold">Functional Analyst, Manorama Infosolutions</h3>
-                    <p class="text-md text-gray-600 mb-2">Jan 2020 - May 2020</p>
-                    <p class="mb-2 text-lg"><strong>Client:</strong> Coal India Pvt. Ltd., Chittaranjan National Cancer Institute, Saroj Gupta Cancer Center and Research Institute etc.</p>
-                </div>
-                <!-- ... Add other jobs similarly ... -->
             </div>
         </section>
 
-        <!-- Education Section -->
-        <section class="mb-8">
-            <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-500 pb-2 mb-4">EDUCATION</h2>
-            <ul class="list-disc list-inside space-y-1 text-lg">
-                <li>Master in Computer Application (MCA) from UTKAL University, Odisha in June 2011.</li>
-                <li>+3 from UTKAL University, Odisha in 2008.</li>
-                <li>+2 from Council of Higher Secondary Education, Odisha in March 2004.</li>
-                <li>10th from Board of Secondary Education, Odisha in March 2002.</li>
-                <li>PGDCA (O level) from JVCE, BJB Auto. College, Odisha in 2008.</li>
-            </ul>
-        </section>
-
-        <!-- Key Skills Section -->
-        <section class="mb-8">
-            <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-500 pb-2 mb-4">KEY SKILLS</h2>
-            <div class="flex flex-wrap gap-2">
-                <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full">Data Analysis</span>
-                <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full">Data Modelling</span>
-                <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full">Manual Testing</span>
-                <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full">SQL Developer</span>
-                <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full">ORACLE 11G</span>
-                <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full">MS SQL Server</span>
-                <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full">IIS Web Applications</span>
-                <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full">Troubleshooting</span>
-                <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full">Cloud Environments</span>
-                <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full">Web API</span>
-                <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full">UNIX Shell Scripting</span>
-                <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full">R Programming</span>
+        <!-- About Me Section -->
+        <section id="about" class="py-20 md:py-28 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 fade-in-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">About Me</h2>
+                    <p class="text-lg text-gray-600 mt-2">A brief introduction to my professional journey.</p>
+                </div>
+                <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-lg fade-in-up" style="animation-delay: 0.2s;">
+                    <p class="text-lg md:text-xl text-gray-700 leading-relaxed text-center">
+                        I am a customer-focused and articulate Senior Software Engineer with strong design, integration, and problem-solving skills. I thrive in challenging environments, constantly working with cutting-edge technologies to contribute meaningfully to both organizational and personal growth. My expertise lies in providing robust application support, handling complex system configurations, and ensuring seamless operations.
+                    </p>
+                </div>
             </div>
         </section>
 
-        <!-- Declaration Section -->
-        <section>
-            <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-500 pb-2 mb-4">DECLARATION</h2>
-            <p class="text-lg italic leading-relaxed">
-                "Given an opportunity, I will put my full efforts and skills for high satisfaction levels and faster growth of Company. I hereby declare that, the above information provided is true and correct to the best of my knowledge."
-            </p>
-            <p class="text-right mt-6 font-semibold text-xl">Dambarudhara Patra</p>
+        <!-- Experience Section -->
+        <section id="experience" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 fade-in-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Work Experience</h2>
+                    <p class="text-lg text-gray-600 mt-2">My professional timeline and key responsibilities.</p>
+                </div>
+                <div class="relative max-w-3xl mx-auto">
+                    <!-- Timeline Line -->
+                    <div class="absolute left-1/2 h-full w-0.5 bg-gray-200 transform -translate-x-1/2"></div>
+                    <!-- Timeline Items -->
+                    <div class="space-y-12">
+                        <!-- Item 1 -->
+                        <div class="relative flex items-center fade-in-up">
+                            <div class="hidden md:block w-1/2 pr-8 text-right">
+                                <h3 class="text-xl font-bold text-gray-800">Manager IT (Technical Application Analyst)</h3>
+                                <p class="text-gray-600">L&T Finance</p>
+                            </div>
+                            <div class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-blue-600 rounded-full border-4 border-white flex items-center justify-center"></div>
+                            <div class="w-full md:w-1/2 md:pl-8">
+                                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                                    <p class="text-sm text-blue-600 font-semibold mb-2">Jan 2023 - Present</p>
+                                    <h3 class="block md:hidden text-lg font-bold text-gray-800 mb-1">Manager IT</h3>
+                                    <p class="text-gray-700">Daily operational support, batch job monitoring, resolving user queries, and supporting the LTFS App/Web in the financial domain.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="relative flex items-center fade-in-up">
+                            <div class="w-full md:w-1/2 md:pr-8 md:text-right">
+                                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                                    <p class="text-sm text-blue-600 font-semibold mb-2">Aug 2021 - Jan 2023</p>
+                                    <h3 class="block md:hidden text-lg font-bold text-gray-800 mb-1">Technical Application Analyst</h3>
+                                    <p class="text-gray-700">Provided daily operational support, managed application health checks, and resolved user queries for L&T Finance services via Neo-Soft.</p>
+                                </div>
+                            </div>
+                             <div class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-blue-600 rounded-full border-4 border-white flex items-center justify-center"></div>
+                            <div class="hidden md:block w-1/2 pl-8">
+                                <h3 class="text-xl font-bold text-gray-800">Technical Application Analyst</h3>
+                                <p class="text-gray-600">Neo-Soft Technologies</p>
+                            </div>
+                        </div>
+                        <!-- Item 3 -->
+                        <div class="relative flex items-center fade-in-up">
+                            <div class="hidden md:block w-1/2 pr-8 text-right">
+                                <h3 class="text-xl font-bold text-gray-800">Application Support Engineer</h3>
+                                <p class="text-gray-600">Global Hunt India</p>
+                            </div>
+                            <div class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-blue-600 rounded-full border-4 border-white flex items-center justify-center"></div>
+                            <div class="w-full md:w-1/2 md:pl-8">
+                                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                                    <p class="text-sm text-blue-600 font-semibold mb-2">Mar 2019 - June 2019</p>
+                                    <h3 class="block md:hidden text-lg font-bold text-gray-800 mb-1">Application Support Engineer</h3>
+                                    <p class="text-gray-700">Handled L1/L2 support for Telstra Health's Arcus HIS, managed reports using SQL, and supported clients like Rainbow Hospitals.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-    </div>
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 md:py-28 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 fade-in-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">My Skills</h2>
+                    <p class="text-lg text-gray-600 mt-2">A showcase of my technical abilities.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+                    <!-- Skill Card -->
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300 fade-in-up">
+                        <div class="text-blue-600 mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7a8 4 0 0116 0" /></svg>
+                        </div>
+                        <h3 class="font-semibold text-lg">SQL Development</h3>
+                        <p class="text-sm text-gray-500">Oracle 11g & MS SQL</p>
+                    </div>
+                    <!-- Skill Card -->
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300 fade-in-up" style="animation-delay: 0.1s;">
+                        <div class="text-blue-600 mb-3">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+                        </div>
+                        <h3 class="font-semibold text-lg">Data Analysis</h3>
+                        <p class="text-sm text-gray-500">Modeling & Cleaning</p>
+                    </div>
+                    <!-- Skill Card -->
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300 fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="text-blue-600 mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                        </div>
+                        <h3 class="font-semibold text-lg">Web Technologies</h3>
+                        <p class="text-sm text-gray-500">IIS & Web API</p>
+                    </div>
+                    <!-- Skill Card -->
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300 fade-in-up" style="animation-delay: 0.3s;">
+                        <div class="text-blue-600 mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 14v6m-3-3h6M3 10h2a2 2 0 012 2v2a2 2 0 01-2 2H3v-6zM3 10V6a2 2 0 012-2h2a2 2 0 012 2v4m-4 0h4m6 0v6m-3-3h6m-6-10V6a2 2 0 012-2h2a2 2 0 012 2v4m-4 0h4" /></svg>
+                        </div>
+                        <h3 class="font-semibold text-lg">UNIX / Shell</h3>
+                        <p class="text-sm text-gray-500">Scripting & Crontab</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 fade-in-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Contact Me</h2>
+                    <p class="text-lg text-gray-600 mt-2">Let's connect and build something amazing together.</p>
+                </div>
+                <div class="max-w-2xl mx-auto bg-gray-50 p-8 rounded-2xl shadow-lg fade-in-up" style="animation-delay: 0.2s;">
+                    <form action="#" method="POST">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                                <input type="text" name="name" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Your Name">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                <input type="email" name="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="your.email@example.com">
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea name="message" id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="How can I help you?"></textarea>
+                        </div>
+                        <div class="mt-8 text-center">
+                            <button type="submit" class="bg-blue-600 text-white px-10 py-3 rounded-full font-semibold text-lg hover:bg-blue-700 transition duration-300 shadow-lg">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; 2025 Dambarudhara Patra. All Rights Reserved.</p>
+            <p class="text-sm text-gray-400 mt-2">Designed with passion and code.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // JavaScript for smooth scroll and fade-in animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-up');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in-up').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
 
 </body>
 </html>
