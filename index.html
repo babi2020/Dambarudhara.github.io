@@ -3,285 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dambarudhara Patra - Interactive Resume</title>
-    <!-- Tailwind CSS CDN -->
+    <title>DAMBARUDHARA PATRA - Resume</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
-        }
-        .section-header {
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .section-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
-        .section-content.expanded {
-            max-height: 1000px; /* Adjust as needed for content length */
-            transition: max-height 0.5s ease-in;
-        }
-        .arrow {
-            transition: transform 0.3s ease;
-        }
-        .arrow.expanded {
-            transform: rotate(90deg);
         }
     </style>
 </head>
-<body class="p-4 sm:p-6 md:p-8 lg:p-10">
-    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl overflow-hidden p-6 sm:p-8 md:p-10">
+<body class="bg-gray-100 text-gray-800">
 
+    <div class="container mx-auto max-w-4xl p-4 sm:p-8 bg-white shadow-lg my-8 rounded-lg">
         <!-- Header Section -->
-        <header class="text-center mb-8 pb-4 border-b border-gray-200">
-            <h1 class="text-4xl font-bold text-gray-800 mb-2">Dambarudhara Patra</h1>
-            <p class="text-lg text-gray-600">Senior Software Engineer</p>
-            <div class="flex flex-col sm:flex-row justify-center items-center mt-4 space-y-2 sm:space-y-0 sm:space-x-6 text-gray-700">
-                <p class="flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
-                    </svg>
-                    Bangalore, Karnataka, India
-                </p>
-                <p class="flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.774a11.037 11.037 0 006.103 6.103l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                    </svg>
-                    +91-7077192413
-                </p>
-                <p class="flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                    </svg>
-                    babi.patra1@gmail.com
-                </p>
+        <header class="text-center border-b pb-6 mb-8">
+            <h1 class="text-4xl sm:text-5xl font-bold text-gray-900">DAMBARUDHARA PATRA</h1>
+            <div class="flex justify-center items-center space-x-6 mt-4 text-gray-600">
+                <a href="mailto:babi.patra1@gmail.com" class="hover:text-blue-600">babi.patra1@gmail.com</a>
+                <span>|</span>
+                <p>7077192413</p>
             </div>
         </header>
 
-        <!-- Profile Summary -->
+        <!-- Summary Section -->
         <section class="mb-8">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4 pb-2 border-b-2 border-gray-300">Profile Summary</h2>
-            <p class="text-gray-700 leading-relaxed">
+            <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-500 pb-2 mb-4">SUMMARY</h2>
+            <p class="text-lg leading-relaxed">
                 A results-driven, customer-focused, articulate and analytical Senior Software Engineer who can think "out of the box". Strong in design and integration problem-solving skills. Strong written and verbal communications. To constantly work in a challenging environment on cutting edge technologies and to contribute meaningfully towards the organizational and personal growth.
             </p>
         </section>
 
-        <!-- Core Qualifications -->
+        <!-- Work Experience Section -->
         <section class="mb-8">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4 pb-2 border-b-2 border-gray-300">Core Qualifications</h2>
-            <ul class="list-disc list-inside text-gray-700 space-y-2">
-                <li>Total 9 years 5 months Years of working experience in Application and Production Support.</li>
-                <li>Excellent written and oral communication skills.</li>
-                <li>Daily operational support including Batch job monitoring and application health checks.</li>
-                <li>Resolving the User queries and help them meet up their requirements.</li>
-                <li>Identified problems and formulated alternative solutions.</li>
-                <li>Experienced in UNIX shell scripting and has good knowledge of Unix Environment.</li>
-                <li>Worked on scheduling Jobs in UNIX server using crontab.</li>
-                <li>Strong knowledge on UNIX commands like Grep, Sed, find utilities, writing regular expressions and script debugging.</li>
-                <li>Proven team handling skills & productive client interaction skills.</li>
-                <li>Ability to work confidently and passionately until the desired outcome is achieved.</li>
-                <li>Excellent leadership qualities, analytical skills, oral/written communication skills, interpersonal skills.</li>
-                <li>Liaise with other interfacing system Team members to resolve the various issues faced and provide support out of office hours, during weekends and during major release work to development and customer to help them resolve issues faced.</li>
-            </ul>
-        </section>
-
-        <!-- Skills -->
-        <section class="mb-8">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4 pb-2 border-b-2 border-gray-300">Skills</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-700">
-                <div>
-                    <h3 class="font-medium text-gray-800">Scripting:</h3>
-                    <p>Shell Scripting and SQL Script</p>
+            <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-500 pb-2 mb-4">WORK EXPERIENCE</h2>
+            <div class="space-y-6">
+                <!-- Job 1 -->
+                <div class="pl-4 border-l-4 border-gray-200">
+                    <h3 class="text-xl font-semibold">Manager IT (Technical Application Analyst), L&T Finance</h3>
+                    <p class="text-md text-gray-600 mb-2">Jan 2023 - Present</p>
+                    <ul class="list-disc list-inside space-y-1 text-lg">
+                        <li>Daily operational support including Batch job monitoring and application health checks.</li>
+                        <li>Resolving the User queries and help them meet up their requirements.</li>
+                        <li>Liaise with other interfacing system Team members to resolve the various issues faced and provide support out of office hours, during weekends and during major release work to development and customer to help them resolve issues faced.</li>
+                        <li>Working In Housing Loan Section, Home Décor, Express Loan Journey of Client L&T finance Services in Financial Domain. Using Salesforce Application and Workbench to Support LTFS App/Web day to day issue.</li>
+                    </ul>
                 </div>
-                <div>
-                    <h3 class="font-medium text-gray-800">Database:</h3>
-                    <p>Oracle 12g</p>
+                <!-- Job 2 -->
+                <div class="pl-4 border-l-4 border-gray-200">
+                    <h3 class="text-xl font-semibold">Technical Application Analyst, Neo-Soft Technologies</h3>
+                    <p class="text-md text-gray-600 mb-2">Aug 2021 - Jan 2023</p>
+                    <ul class="list-disc list-inside space-y-1 text-lg">
+                        <li>Daily operational support including Batch job monitoring and application health checks.</li>
+                        <li>Resolving the User queries and help them meet up their requirements.</li>
+                        <li>Liaise with other interfacing system Team members to resolve the various issues faced and provide support out of office hours, during weekends and during major release work to development and customer to help them resolve issues faced.</li>
+                        <li>Working In Housing Loan Section, Home Décor, Express Loan Journey of Client L&T finance Services in Financial Domain. Using Salesforce Application and Workbench to Support LTFS App/Web day to day issue.</li>
+                    </ul>
                 </div>
-                <div>
-                    <h3 class="font-medium text-gray-800">Ticketing Tools:</h3>
-                    <p>Service manage engine Tools: Putty, devops, Servicedesk</p>
+                <!-- Job 3 -->
+                <div class="pl-4 border-l-4 border-gray-200">
+                    <h3 class="text-xl font-semibold">Functional Analyst, Manorama Infosolutions</h3>
+                    <p class="text-md text-gray-600 mb-2">Jan 2020 - May 2020</p>
+                    <p class="mb-2 text-lg"><strong>Client:</strong> Coal India Pvt. Ltd., Chittaranjan National Cancer Institute, Saroj Gupta Cancer Center and Research Institute etc.</p>
                 </div>
-                <div>
-                    <h3 class="font-medium text-gray-800">Operating Systems:</h3>
-                    <p>Linux and Windows Family</p>
-                </div>
+                <!-- ... Add other jobs similarly ... -->
             </div>
         </section>
 
-        <!-- Work Experience (Collapsible) -->
-        <section class="mb-8 rounded-lg border border-gray-200 shadow-sm">
-            <div class="section-header p-4 bg-gray-100 rounded-t-lg" onclick="toggleSection('workExperience')">
-                <h2 class="text-2xl font-semibold text-gray-800">Work Experience</h2>
-                <span class="arrow text-gray-500 text-2xl">&#9658;</span>
-            </div>
-            <div id="workExperience" class="section-content p-4">
-                <ul class="list-none space-y-6">
-                    <li>
-                        <h3 class="font-bold text-gray-800">Manager IT</h3>
-                        <p class="text-gray-700">L&T Financial Services, Bangalore</p>
-                        <p class="text-gray-600 text-sm">January 2023 - Present</p>
-                    </li>
-                    <li>
-                        <h3 class="font-bold text-gray-800">IT Support Engineer</h3>
-                        <p class="text-gray-700">NeoSoft Technologies Pvt. Ltd., Client L&T Financial Services, Mumbai</p>
-                        <p class="text-gray-600 text-sm">August 2021 - January 2023</p>
-                    </li>
-                    <li>
-                        <h3 class="font-bold text-gray-800">Functional Analyst</h3>
-                        <p class="text-gray-700">Manorama Infosolutions Pvt. Ltd. Healthcare Solutions, Kolhapur, Maharashtra at client location Kolkata</p>
-                        <p class="text-gray-600 text-sm">January 2020 - May 2020</p>
-                    </li>
-                    <li>
-                        <h3 class="font-bold text-gray-800">Senior IT Executive</h3>
-                        <p class="text-gray-700">Hegde Hospital, Madhapur</p>
-                        <p class="text-gray-600 text-sm">March 2019 - May 2019</p>
-                    </li>
-                    <li>
-                        <h3 class="font-bold text-gray-800">Application Support Engineer</h3>
-                        <p class="text-gray-700">Cloud Med-Telstra Health (Arcus HIS) with Payroll Global Hunt Company, Chennai</p>
-                        <p class="text-gray-600 text-sm">March 2017 - June 2017</p>
-                    </li>
-                    <li>
-                        <h3 class="font-bold text-gray-800">Programmer</h3>
-                        <p class="text-gray-700">Apollo Hospitals Enterprises Limited, Chennai</p>
-                        <p class="text-gray-600 text-sm">July 2016 - March 2017</p>
-                    </li>
-                    <li>
-                        <h3 class="font-bold text-gray-800">Senior Executive IT</h3>
-                        <p class="text-gray-700">Apollo Hospitals Enterprises Limited, Hyderabad</p>
-                        <p class="text-gray-600 text-sm">June 2011 to April 2015</p>
-                    </li>
-                </ul>
-                <p class="mt-4 text-gray-700 leading-relaxed">
-                    Versatile Individual with experience collecting, transforming, and organizing data for Analysis to help make informed decisions, Excellent understanding and proficiency of platforms for effective data analysis, including SQL, Spreadsheets, Tableau and R. Strong communication, organizational and analytical skills. Recently completed the Google Data Analytics Certificate a rigorous, hands on program that covers the entire scope of the Data Analysis Process.
-                </p>
-            </div>
-        </section>
-
-        <!-- Education -->
+        <!-- Education Section -->
         <section class="mb-8">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4 pb-2 border-b-2 border-gray-300">Education</h2>
-            <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-500 pb-2 mb-4">EDUCATION</h2>
+            <ul class="list-disc list-inside space-y-1 text-lg">
                 <li>Master in Computer Application (MCA) from UTKAL University, Odisha in June 2011.</li>
                 <li>+3 from UTKAL University, Odisha in 2008.</li>
                 <li>+2 from Council of Higher Secondary Education, Odisha in March 2004.</li>
                 <li>10th from Board of Secondary Education, Odisha in March 2002.</li>
                 <li>PGDCA (O level) from JVCE, BJB Auto. College, Odisha in 2008.</li>
-                <li>Multimedia, Graphics Designing, Editing and Microsoft Office from OPERP, Bhubaneswar with NIIT, Odisha in March 2008.</li>
-                <li>MS Office and Internet from OBCFDCC, Bhubaneswar with ECIL-ECIT, BBSR Odisha in 2009.</li>
-                <li>Data Entry Operator from SCTE & VT, Odisha with C.V. Raman College of Engineering, BBSR, Odisha in August 2009.</li> <!-- Changed 2008 to 2009 -->
             </ul>
         </section>
 
-        <!-- Project Details (Collapsible) -->
-        <section class="mb-8 rounded-lg border border-gray-200 shadow-sm">
-            <div class="section-header p-4 bg-gray-100 rounded-t-lg" onclick="toggleSection('projectDetails')">
-                <h2 class="text-2xl font-semibold text-gray-800">Project Details</h2>
-                <span class="arrow text-gray-500 text-2xl">&#9658;</span>
-            </div>
-            <div id="projectDetails" class="section-content p-4">
-                <h3 class="font-bold text-gray-800 mb-2">Housing Finance product applications: Application and Production support</h3>
-                <h4 class="font-medium text-gray-800 mb-2">Responsibilities:</h4>
-                <ul class="list-disc list-inside text-gray-700 space-y-2">
-                    <li>Handling L1/L2 support, providing user and database using MS SQL Server 2014 support to the users after "Arcus HIS Go-Live".</li>
-                    <li>Handling Report Server using SQL and PL/SQL.</li>
-                    <li>Creating and replacing old procedure to new procedure as per client Requirement data.</li>
-                    <li>Work in support team to solve various system and application configuration related issues.</li>
-                    <li>Gather and showcase deep knowledge of Telstra Healthcare products and its Various integrations and configurations.</li>
-                    <li>Converse with Global customers to identify and solve the issues in application usage.</li>
-                    <li>Analyses and monitor complex problems across cloud infrastructure and software using a range of tools and techniques.</li>
-                    <li>Work closely with Operations, Customers and Engineering to diagnose and troubleshoot issues.</li>
-                    <li>Provide feedback to L3 and Engineering on misses in documentation. Maintain and enhance articles for obvious misses.</li>
-                    <li>Participate in development and operational meetings (e.g. Stand-ups/Retrospectives), and occasionally participate in department meetings.</li>
-                    <li>Support other engineers on the team with guidance, experience, oversight, advice, and reviews.</li>
-                    <li>Work with support tools and processes religiously so that information is always up to date in the incidents.</li>
-                    <li>Understand the release notes for any new updates to the application.</li>
-                    <li>Hands on in configuring any hardware/software component in the product supported.</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Strengths -->
+        <!-- Key Skills Section -->
         <section class="mb-8">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4 pb-2 border-b-2 border-gray-300">Strengths</h2>
-            <ul class="list-disc list-inside text-gray-700 space-y-2">
-                <li>Excellent leadership qualities, analytical skills, oral/written communication skills, interpersonal skills.</li>
-                <li>Ability to interact efficiently and get along with people at all levels.</li>
-                <li>Minimum Supervisions or Guidance required learning new applications.</li>
-            </ul>
-        </section>
-
-        <!-- Personal Details -->
-        <section class="mb-8">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4 pb-2 border-b-2 border-gray-300">Personal Details</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-700">
-                <div>
-                    <h3 class="font-medium text-gray-800">Name:</h3>
-                    <p>Dambarudhara Patra</p>
-                </div>
-                <div>
-                    <h3 class="font-medium text-gray-800">Language Known:</h3>
-                    <p>English, Hindi</p>
-                </div>
-                <div>
-                    <h3 class="font-medium text-gray-800">Mobile No:</h3>
-                    <p>+91-7077192413</p>
-                </div>
-                <div>
-                    <h3 class="font-medium text-gray-800">E-Mail:</h3>
-                    <p>babi.patra1@gmail.com</p>
-                </div>
-                <div>
-                    <h3 class="font-medium text-gray-800">Gender:</h3>
-                    <p>Male</p>
-                </div>
-                <div>
-                    <h3 class="font-medium text-gray-800">Hobbies:</h3>
-                    <p>Playing Cricket and Chess</p>
-                </div>
-                <div class="col-span-1 sm:col-span-2">
-                    <h3 class="font-medium text-gray-800">Present Address:</h3>
-                    <p>Plot No:24, 4th cross road, Prashanthi Layout, Kodigehalli, Kadugodi Post, Bangalore, Karnataka, Pincode-560067</p>
-                </div>
+            <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-500 pb-2 mb-4">KEY SKILLS</h2>
+            <div class="flex flex-wrap gap-2">
+                <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full">Data Analysis</span>
+                <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full">Data Modelling</span>
+                <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full">Manual Testing</span>
+                <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full">SQL Developer</span>
+                <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full">ORACLE 11G</span>
+                <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full">MS SQL Server</span>
+                <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full">IIS Web Applications</span>
+                <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full">Troubleshooting</span>
+                <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full">Cloud Environments</span>
+                <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full">Web API</span>
+                <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full">UNIX Shell Scripting</span>
+                <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full">R Programming</span>
             </div>
         </section>
 
-        <!-- Declaration -->
-        <section class="mb-8 text-gray-700 text-sm italic border-t border-gray-200 pt-4">
-            <p class="mb-2">Given an opportunity, I will put my full efforts and skills for high satisfaction levels and faster growth of Company.</p>
-            <p>I hereby declare that, the above information provided is true and correct to the best of my knowledge.</p>
-            <p class="mt-4 font-bold text-gray-800">Dambarudhara Patra</p>
+        <!-- Declaration Section -->
+        <section>
+            <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-500 pb-2 mb-4">DECLARATION</h2>
+            <p class="text-lg italic leading-relaxed">
+                "Given an opportunity, I will put my full efforts and skills for high satisfaction levels and faster growth of Company. I hereby declare that, the above information provided is true and correct to the best of my knowledge."
+            </p>
+            <p class="text-right mt-6 font-semibold text-xl">Dambarudhara Patra</p>
         </section>
 
     </div>
 
-    <script>
-        /**
-         * Toggles the visibility and appearance of a collapsible section.
-         * @param {string} sectionId - The ID of the section to toggle.
-         */
-        function toggleSection(sectionId) {
-            const sectionContent = document.getElementById(sectionId);
-            const sectionHeader = sectionContent.previousElementSibling; // Get the header div
-            const arrow = sectionHeader.querySelector('.arrow');
-
-            if (sectionContent.classList.contains('expanded')) {
-                // Collapse the section
-                sectionContent.classList.remove('expanded');
-                arrow.classList.remove('expanded');
-            } else {
-                // Expand the section
-                sectionContent.classList.add('expanded');
-                arrow.classList.add('expanded');
-            }
-        }
-    </script>
 </body>
 </html>
