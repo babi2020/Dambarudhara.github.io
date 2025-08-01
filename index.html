@@ -1,258 +1,261 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dambarudhara Patra | Senior Software Engineer</title>
+    <title>Dambarudhara Patra - Interactive Resume</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
         body {
             font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
         }
-        /* Simple animation for sections */
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
-            opacity: 0;
-            transform: translateY(20px);
+        .section-header {
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .section-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        .section-content.expanded {
+            max-height: 1000px; /* A large value to allow for smooth transition */
+            transition: max-height 0.7s ease-in;
+        }
+        .rotate-icon {
+            transform: rotate(0deg);
+            transition: transform 0.3s ease;
+        }
+        .rotate-icon.rotated {
+            transform: rotate(180deg);
+        }
+        .card {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #ffffff;
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="p-4 sm:p-8 md:p-12">
+    <div class="max-w-4xl mx-auto space-y-8">
 
-    <!-- Header & Navigation -->
-    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-gray-900">DP.</a>
-            <div class="hidden md:flex space-x-8 items-center">
-                <a href="#about" class="text-gray-600 hover:text-blue-600 transition duration-300">About</a>
-                <a href="#experience" class="text-gray-600 hover:text-blue-600 transition duration-300">Experience</a>
-                <a href="#skills" class="text-gray-600 hover:text-blue-600 transition duration-300">Skills</a>
-                <a href="#contact" class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition duration-300 shadow-md">Contact Me</a>
+        <!-- Header Section -->
+        <header class="text-center p-6 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-xl shadow-lg">
+            <h1 class="text-4xl font-bold tracking-tight">DAMBARUDHARA PATRA</h1>
+            <p class="mt-2 text-xl font-medium">Senior Software Engineer</p>
+            <div class="mt-4 flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-6 text-sm">
+                <a href="mailto:babi.patra1@gmail.com" class="hover:underline flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                    </svg>
+                    babi.patra1@gmail.com
+                </a>
+                <span class="flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.774a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                    </svg>
+                    7077192413
+                </span>
             </div>
-            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
-        </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-             <a href="#about" class="block py-2 text-gray-600 hover:text-blue-600">About</a>
-             <a href="#experience" class="block py-2 text-gray-600 hover:text-blue-600">Experience</a>
-             <a href="#skills" class="block py-2 text-gray-600 hover:text-blue-600">Skills</a>
-             <a href="#contact" class="block mt-2 bg-blue-600 text-white text-center px-4 py-2 rounded-full hover:bg-blue-700">Contact Me</a>
-        </div>
-    </header>
+        </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="bg-white">
-            <div class="container mx-auto px-6 py-20 md:py-32 text-center">
-                <div class="max-w-4xl mx-auto">
-                    <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
-                        Hi, I'm Dambarudhara Patra
-                    </h1>
-                    <p class="mt-4 text-lg md:text-xl text-gray-600">
-                        A results-driven and analytical Senior Software Engineer with a passion for solving complex problems and building cutting-edge technology.
-                    </p>
-                    <div class="mt-8 flex justify-center gap-4">
-                        <a href="#contact" class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-blue-700 transition duration-300 shadow-xl">Get In Touch</a>
-                        <a href="#experience" class="bg-gray-200 text-gray-800 px-8 py-3 rounded-full font-semibold text-lg hover:bg-gray-300 transition duration-300">View My Work</a>
+        <!-- Main Content Sections -->
+        <main class="space-y-6">
+
+            <!-- Summary Section -->
+            <section class="card p-6">
+                <div class="section-header flex justify-between items-center" onclick="toggleSection('summary-content')">
+                    <h2 class="text-2xl font-bold text-gray-800">SUMMARY</h2>
+                    <svg class="h-6 w-6 text-gray-500 rotate-icon" id="summary-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </div>
+                <div id="summary-content" class="section-content">
+                    <p class="mt-4 text-gray-700">A results-driven, customer-focused, articulate and analytical Senior Software Engineer who can think "out of the box". Strong in design and integration problem-solving skills. Strong written and verbal communications. To constantly work in a challenging environment on cutting edge technologies and to contribute meaningfully towards the organizational and personal growth.</p>
+                </div>
+            </section>
+
+            <!-- Work Experience Section -->
+            <section class="card p-6">
+                <div class="section-header flex justify-between items-center" onclick="toggleSection('work-experience-content')">
+                    <h2 class="text-2xl font-bold text-gray-800">WORK EXPERIENCE</h2>
+                    <svg class="h-6 w-6 text-gray-500 rotate-icon" id="work-experience-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </div>
+                <div id="work-experience-content" class="section-content">
+                    <div class="mt-4 space-y-6">
+                        <!-- L&T Finance -->
+                        <div class="border-l-4 border-indigo-500 pl-4">
+                            <h3 class="text-xl font-semibold text-gray-900">Manager IT (Technical Application Analyst)</h3>
+                            <p class="text-sm text-gray-600">L&T Finance | Jan 2023 - Present</p>
+                            <ul class="list-disc list-inside mt-2 text-gray-700 space-y-1">
+                                <li>Daily operational support including Batch job monitoring and application health checks.</li>
+                                <li>Resolving the User queries and help them meet up their requirements.</li>
+                                <li>Liaise with other interfacing system Team members to resolve the various issues faced and provide support out of office hours, during weekends and during major release work to development and customer to help them resolve issues faced.</li>
+                                <li>Working In Housing Loan Section, Home Décor, Express Loan Journey of Client L&T finance Services in Financial Domain. Using Salesforce Application and Workbench to Support LTFS App/Web day to day issue.</li>
+                            </ul>
+                        </div>
+                        <!-- Neo-Soft Technologies -->
+                        <div class="border-l-4 border-indigo-500 pl-4">
+                            <h3 class="text-xl font-semibold text-gray-900">Technical Application Analyst</h3>
+                            <p class="text-sm text-gray-600">Neo-Soft Technologies | Aug 2021 - Jan 2023</p>
+                            <ul class="list-disc list-inside mt-2 text-gray-700 space-y-1">
+                                <li>Daily operational support including Batch job monitoring and application health checks.</li>
+                                <li>Resolving the User queries and help them meet up their requirements.</li>
+                                <li>Liaise with other interfacing system Team members to resolve the various issues faced and provide support out of office hours, during weekends and during major release work to development and customer to help them resolve issues faced.</li>
+                                <li>Working In Housing Loan Section, Home Décor, Express Loan Journey of Client L&T finance Services in Financial Domain. Using Salesforce Application and Workbench to Support LTFS App/Web day to day issue.</li>
+                            </ul>
+                        </div>
+                        <!-- Manorama Infosolutions -->
+                        <div class="border-l-4 border-indigo-500 pl-4">
+                            <h3 class="text-xl font-semibold text-gray-900">Functional Analyst</h3>
+                            <p class="text-sm text-gray-600">Manorama Infosolutions | Jan 2020 - May 2020</p>
+                            <ul class="list-disc list-inside mt-2 text-gray-700 space-y-1">
+                                <li>Outline: Manorama Lifeline Enterprise is a comprehensive cloud-based HIMS solution suite composed of over 45+ modules designed to automate and streamline the entire patient journey of healthcare entities right from the patient's entry to his/her exit.</li>
+                                <li>As a cloud-based healthcare management software, Manorama Lifeline Enterprise can be accessed anytime and anywhere.</li>
+                                <li>Client: Coal India Pvt. Ltd., Chittaranjan National Cancer Institute, Saroj Gupta Cancer Center and Research Institute etc.</li>
+                            </ul>
+                        </div>
+                        <!-- Hegde Hospital -->
+                        <div class="border-l-4 border-indigo-500 pl-4">
+                            <h3 class="text-xl font-semibold text-gray-900">Senior IT EXECUTIVE</h3>
+                            <p class="text-sm text-gray-600">Hegde Hospital, Hyderabad | Mar 2019 - May 2019</p>
+                            <ul class="list-disc list-inside mt-2 text-gray-700 space-y-1">
+                                <li>Outline: Insta HIS is a comprehensive hospital information system that handles patient administration and financial functions and integrates these with an advanced clinical information system.</li>
+                                <li>Using for Appointment Booking Hegde App/Console is managed.</li>
+                            </ul>
+                        </div>
+                        <!-- Global Hunt India -->
+                        <div class="border-l-4 border-indigo-500 pl-4">
+                            <h3 class="text-xl font-semibold text-gray-900">Application Support Engineer</h3>
+                            <p class="text-sm text-gray-600">Global Hunt India | Mar 2019 - June 2019</p>
+                            <ul class="list-disc list-inside mt-2 text-gray-700 space-y-1">
+                                <li>Outline: Client Telstra Health Product - Arcus HIS is a comprehensive hospital information system that handles patient administration and financial functions and integrates these with an advanced clinical information system.</li>
+                                <li>Handling $L1/L2$ support, providing user and database using MS SQL Server 2014 support to the users after "Arcus HIS Go-Live".</li>
+                                <li>Handling Report Server using SQL and PL/SQL.</li>
+                            </ul>
+                        </div>
+                        <!-- Apollo Hospitals Enterprises, Chennai -->
+                        <div class="border-l-4 border-indigo-500 pl-4">
+                            <h3 class="text-xl font-semibold text-gray-900">Programmer</h3>
+                            <p class="text-sm text-gray-600">Apollo Hospitals Enterprises, Chennai | July 2016 - March 2017</p>
+                            <ul class="list-disc list-inside mt-2 text-gray-700 space-y-1">
+                                <li>Involved in understanding requirement and functional specification developed using SRS.</li>
+                                <li>Handling $L1/L2$ support, providing user and database support to the users after "Med Mantra Go-Live".</li>
+                                <li>Creating User Login-id's and assigning Different roles for the Users.</li>
+                            </ul>
+                        </div>
+                        <!-- Apollo Hospitals Enterprises, Hyderabad -->
+                        <div class="border-l-4 border-indigo-500 pl-4">
+                            <h3 class="text-xl font-semibold text-gray-900">Senior Executive IT</h3>
+                            <p class="text-sm text-gray-600">Apollo Hospitals Enterprises, Hyderabad | June 2011 - April 2015</p>
+                            <ul class="list-disc list-inside mt-2 text-gray-700 space-y-1">
+                                <li>Outline: Apollo Group of Hospitals and Tata Consultancy Services jointly created Med Mantra, a next generation Hospital Information System.</li>
+                                <li>Some of the key objectives of the project include: Development and deployment of next generation HIS, covering end-to-end requirements of hospitals.</li>
+                                <li>Handling $L1/L2$ support, providing user and database support to the users after "Med Mantra Go-Live".</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- About Me Section -->
-        <section id="about" class="py-20 md:py-28 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12 fade-in-up">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">About Me</h2>
-                    <p class="text-lg text-gray-600 mt-2">A brief introduction to my professional journey.</p>
+            <!-- Key Skills Section -->
+            <section class="card p-6">
+                <div class="section-header flex justify-between items-center" onclick="toggleSection('skills-content')">
+                    <h2 class="text-2xl font-bold text-gray-800">KEY SKILLS</h2>
+                    <svg class="h-6 w-6 text-gray-500 rotate-icon" id="skills-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
                 </div>
-                <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-lg fade-in-up" style="animation-delay: 0.2s;">
-                    <p class="text-lg md:text-xl text-gray-700 leading-relaxed text-center">
-                        I am a customer-focused and articulate Senior Software Engineer with strong design, integration, and problem-solving skills. I thrive in challenging environments, constantly working with cutting-edge technologies to contribute meaningfully to both organizational and personal growth. My expertise lies in providing robust application support, handling complex system configurations, and ensuring seamless operations.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience" class="py-20 md:py-28 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16 fade-in-up">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Work Experience</h2>
-                    <p class="text-lg text-gray-600 mt-2">My professional timeline and key responsibilities.</p>
-                </div>
-                <div class="relative max-w-3xl mx-auto">
-                    <!-- Timeline Line -->
-                    <div class="absolute left-1/2 h-full w-0.5 bg-gray-200 transform -translate-x-1/2"></div>
-                    <!-- Timeline Items -->
-                    <div class="space-y-12">
-                        <!-- Item 1 -->
-                        <div class="relative flex items-center fade-in-up">
-                            <div class="hidden md:block w-1/2 pr-8 text-right">
-                                <h3 class="text-xl font-bold text-gray-800">Manager IT (Technical Application Analyst)</h3>
-                                <p class="text-gray-600">L&T Finance</p>
-                            </div>
-                            <div class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-blue-600 rounded-full border-4 border-white flex items-center justify-center"></div>
-                            <div class="w-full md:w-1/2 md:pl-8">
-                                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                                    <p class="text-sm text-blue-600 font-semibold mb-2">Jan 2023 - Present</p>
-                                    <h3 class="block md:hidden text-lg font-bold text-gray-800 mb-1">Manager IT</h3>
-                                    <p class="text-gray-700">Daily operational support, batch job monitoring, resolving user queries, and supporting the LTFS App/Web in the financial domain.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Item 2 -->
-                        <div class="relative flex items-center fade-in-up">
-                            <div class="w-full md:w-1/2 md:pr-8 md:text-right">
-                                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                                    <p class="text-sm text-blue-600 font-semibold mb-2">Aug 2021 - Jan 2023</p>
-                                    <h3 class="block md:hidden text-lg font-bold text-gray-800 mb-1">Technical Application Analyst</h3>
-                                    <p class="text-gray-700">Provided daily operational support, managed application health checks, and resolved user queries for L&T Finance services via Neo-Soft.</p>
-                                </div>
-                            </div>
-                             <div class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-blue-600 rounded-full border-4 border-white flex items-center justify-center"></div>
-                            <div class="hidden md:block w-1/2 pl-8">
-                                <h3 class="text-xl font-bold text-gray-800">Technical Application Analyst</h3>
-                                <p class="text-gray-600">Neo-Soft Technologies</p>
-                            </div>
-                        </div>
-                        <!-- Item 3 -->
-                        <div class="relative flex items-center fade-in-up">
-                            <div class="hidden md:block w-1/2 pr-8 text-right">
-                                <h3 class="text-xl font-bold text-gray-800">Application Support Engineer</h3>
-                                <p class="text-gray-600">Global Hunt India</p>
-                            </div>
-                            <div class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-blue-600 rounded-full border-4 border-white flex items-center justify-center"></div>
-                            <div class="w-full md:w-1/2 md:pl-8">
-                                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                                    <p class="text-sm text-blue-600 font-semibold mb-2">Mar 2019 - June 2019</p>
-                                    <h3 class="block md:hidden text-lg font-bold text-gray-800 mb-1">Application Support Engineer</h3>
-                                    <p class="text-gray-700">Handled L1/L2 support for Telstra Health's Arcus HIS, managed reports using SQL, and supported clients like Rainbow Hospitals.</p>
-                                </div>
-                            </div>
-                        </div>
+                <div id="skills-content" class="section-content">
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="bg-gray-200 text-gray-800 text-sm font-semibold px-3 py-1 rounded-full">Data Analysis</span>
+                        <span class="bg-gray-200 text-gray-800 text-sm font-semibold px-3 py-1 rounded-full">Data Modelling</span>
+                        <span class="bg-gray-200 text-gray-800 text-sm font-semibold px-3 py-1 rounded-full">Testing Manual</span>
+                        <span class="bg-gray-200 text-gray-800 text-sm font-semibold px-3 py-1 rounded-full">SQL Developer (ORACLE 11G)</span>
+                        <span class="bg-gray-200 text-gray-800 text-sm font-semibold px-3 py-1 rounded-full">Microsoft SQL Server</span>
+                        <span class="bg-gray-200 text-gray-800 text-sm font-semibold px-3 py-1 rounded-full">IIS Web Applications</span>
+                        <span class="bg-gray-200 text-gray-800 text-sm font-semibold px-3 py-1 rounded-full">Web API Troubleshooting</span>
+                        <span class="bg-gray-200 text-gray-800 text-sm font-semibold px-3 py-1 rounded-full">Unix Shell Scripting</span>
+                        <span class="bg-gray-200 text-gray-800 text-sm font-semibold px-3 py-1 rounded-full">Crontab</span>
+                        <span class="bg-gray-200 text-gray-800 text-sm font-semibold px-3 py-1 rounded-full">R Programming</span>
+                        <span class="bg-gray-200 text-gray-800 text-sm font-semibold px-3 py-1 rounded-full">Data Visualization</span>
+                        <span class="bg-gray-200 text-gray-800 text-sm font-semibold px-3 py-1 rounded-full">Effective Presentation</span>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="py-20 md:py-28 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12 fade-in-up">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">My Skills</h2>
-                    <p class="text-lg text-gray-600 mt-2">A showcase of my technical abilities.</p>
+            <!-- Education Section -->
+            <section class="card p-6">
+                <div class="section-header flex justify-between items-center" onclick="toggleSection('education-content')">
+                    <h2 class="text-2xl font-bold text-gray-800">EDUCATION</h2>
+                    <svg class="h-6 w-6 text-gray-500 rotate-icon" id="education-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
                 </div>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
-                    <!-- Skill Card -->
-                    <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300 fade-in-up">
-                        <div class="text-blue-600 mb-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7a8 4 0 0116 0" /></svg>
-                        </div>
-                        <h3 class="font-semibold text-lg">SQL Development</h3>
-                        <p class="text-sm text-gray-500">Oracle 11g & MS SQL</p>
-                    </div>
-                    <!-- Skill Card -->
-                    <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300 fade-in-up" style="animation-delay: 0.1s;">
-                        <div class="text-blue-600 mb-3">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
-                        </div>
-                        <h3 class="font-semibold text-lg">Data Analysis</h3>
-                        <p class="text-sm text-gray-500">Modeling & Cleaning</p>
-                    </div>
-                    <!-- Skill Card -->
-                    <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300 fade-in-up" style="animation-delay: 0.2s;">
-                        <div class="text-blue-600 mb-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                        </div>
-                        <h3 class="font-semibold text-lg">Web Technologies</h3>
-                        <p class="text-sm text-gray-500">IIS & Web API</p>
-                    </div>
-                    <!-- Skill Card -->
-                    <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300 fade-in-up" style="animation-delay: 0.3s;">
-                        <div class="text-blue-600 mb-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 14v6m-3-3h6M3 10h2a2 2 0 012 2v2a2 2 0 01-2 2H3v-6zM3 10V6a2 2 0 012-2h2a2 2 0 012 2v4m-4 0h4m6 0v6m-3-3h6m-6-10V6a2 2 0 012-2h2a2 2 0 012 2v4m-4 0h4" /></svg>
-                        </div>
-                        <h3 class="font-semibold text-lg">UNIX / Shell</h3>
-                        <p class="text-sm text-gray-500">Scripting & Crontab</p>
-                    </div>
+                <div id="education-content" class="section-content">
+                    <ul class="mt-4 text-gray-700 space-y-2">
+                        <li><strong>Master in Computer Application (MCA)</strong> from UTKAL University, Odisha in June 2011.</li>
+                        <li><strong>+3</strong> from UTKAL University, Odisha in 2008.</li>
+                        <li><strong>+2</strong> from Council of Higher Secondary Education, Odisha in March 2004.</li>
+                        <li><strong>10th</strong> from Board of Secondary Education, Odisha in March 2002.</li>
+                        <li><strong>PGDCA (O level)</strong> from JVCE, BJB Auto. College, Odisha in 2008.</li>
+                        <li><strong>Multimedia, Graphics Designing, Editing and Microsoft Office</strong> from OPERP, Bhubaneswar with NIIT, Odisha in March 2008.</li>
+                    </ul>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="py-20 md:py-28 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12 fade-in-up">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Contact Me</h2>
-                    <p class="text-lg text-gray-600 mt-2">Let's connect and build something amazing together.</p>
+            <!-- Declaration Section -->
+            <section class="card p-6">
+                <div class="section-header flex justify-between items-center" onclick="toggleSection('declaration-content')">
+                    <h2 class="text-2xl font-bold text-gray-800">DECLARATION</h2>
+                    <svg class="h-6 w-6 text-gray-500 rotate-icon" id="declaration-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
                 </div>
-                <div class="max-w-2xl mx-auto bg-gray-50 p-8 rounded-2xl shadow-lg fade-in-up" style="animation-delay: 0.2s;">
-                    <form action="#" method="POST">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
-                                <input type="text" name="name" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Your Name">
-                            </div>
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                                <input type="email" name="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="your.email@example.com">
-                            </div>
-                        </div>
-                        <div class="mt-6">
-                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                            <textarea name="message" id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="How can I help you?"></textarea>
-                        </div>
-                        <div class="mt-8 text-center">
-                            <button type="submit" class="bg-blue-600 text-white px-10 py-3 rounded-full font-semibold text-lg hover:bg-blue-700 transition duration-300 shadow-lg">Send Message</button>
-                        </div>
-                    </form>
+                <div id="declaration-content" class="section-content">
+                    <p class="mt-4 text-gray-700">Given an opportunity, I will put my full efforts and skills for high satisfaction levels and faster growth of Company. I hereby declare that, the above information provided is true and correct to the best of my knowledge.</p>
+                    <p class="mt-2 text-lg font-semibold text-gray-800">Dambarudhara Patra</p>
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white">
-        <div class="container mx-auto px-6 py-8 text-center">
-            <p>&copy; 2025 Dambarudhara Patra. All Rights Reserved.</p>
-            <p class="text-sm text-gray-400 mt-2">Designed with passion and code.</p>
-        </div>
-    </footer>
+        </main>
+    </div>
 
     <script>
-        // JavaScript for mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // JavaScript for smooth scroll and fade-in animations
-        document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('fade-in-up');
-                    }
+        function toggleSection(contentId) {
+            const content = document.getElementById(contentId);
+            const icon = document.getElementById(contentId.replace('-content', '-icon'));
+            
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                icon.classList.remove('rotated');
+            } else {
+                // Collapse all other sections
+                document.querySelectorAll('.section-content.expanded').forEach(item => {
+                    item.classList.remove('expanded');
+                    document.getElementById(item.id.replace('-content', '-icon')).classList.remove('rotated');
                 });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.fade-in-up').forEach(el => {
-                observer.observe(el);
-            });
-        });
+                // Expand the clicked section
+                content.classList.add('expanded');
+                icon.classList.add('rotated');
+            }
+        }
+        
+        // Open the first section by default
+        window.onload = () => {
+            const firstSection = document.getElementById('summary-content');
+            const firstIcon = document.getElementById('summary-icon');
+            if (firstSection && firstIcon) {
+                firstSection.classList.add('expanded');
+                firstIcon.classList.add('rotated');
+            }
+        };
     </script>
-
 </body>
 </html>
